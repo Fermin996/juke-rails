@@ -1,0 +1,32 @@
+
+//replace song list div to render new songs
+
+$("#song-list").replaceWith(`
+<div id="song-list" class="music-list-div">
+    <% @album_songs.each do |song| %>
+        <% p song %>
+        <% favorite_style = "fa-solid fa-star " + song["style"] %>
+        <div class="song-div">
+            <div class="left-song-itms">
+                <div class='song-id' ><%= @album_songs.find_index(song)+1 %></div>
+                <%= button_to favorites_path, params: {song_name: song['song_name'], album_id: @album_id }, class:"star-container", remote:true, method: :get do %>
+                    <i id="<%= song['song_name']%>" class="<%=favorite_style %>"></i> 
+                <%end%> 
+                <div class= 'song-name'><%= song['song_name'].upcase %></div>
+                <% unless song['song_label'].nil? %>
+                <% song['song_label'].each do |label| %>
+                    <div class="label"><%= label.upcase %></div>
+                <%end%>     
+                <%end%>     
+            </div>
+            <div class="song-duration-div"><%= song['song_duration'] %></div>
+        </div>
+    <% end %>
+</div>`)
+
+//updating album styles by id corresponding to style id
+document.getElementById("1").className="<%= @style1 %>"
+document.getElementById("2").className="<%= @style2 %>"
+document.getElementById("3").className="<%= @style3 %>"
+document.getElementById("4").className="<%= @style4 %>"
+document.getElementById("5").className="<%= @style5 %>"

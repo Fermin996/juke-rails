@@ -1,0 +1,262 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ 
+ */
+
+
+.app-div{
+    height: 99vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+.albums-div{
+    display: flex;
+    height: 50vh;
+    position: relative;
+    justify-content: center;
+}    
+
+
+.album-div{
+    position: absolute;
+    height: 80%;
+    width: 18%;
+    margin-top:90px;
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 3px 3px 6px grey;
+}
+
+.album1{
+    transform: translateX(-320px) translateY(-80px);
+    z-index: 80;
+}
+.album2{
+    transform: translateX(-160px) translateY(-40px);
+    z-index: 90;
+}
+.album3{
+    z-index: 100;
+    background-color: #0085B2;
+    color:white;
+}
+.album4{
+    transform: translateX(160px) translateY(-40px);
+    z-index: 90;
+}
+.album5{
+    transform: translateX(320px) translateY(-80px);
+    z-index: 80;
+}
+
+.alb-name{
+    font-size: 20px;
+    color: #0085B2;
+    margin-bottom: -15px;
+    margin-top:0px;
+}
+
+.album3 .alb-name{
+    color: white
+}
+
+
+.arrow-container-left{
+    display:flex;
+    background-color: white;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #DDDDDD;
+    color: #DDDDDD;
+    border-radius: 7px;
+    height: 40px;
+    width: 40px;
+    margin-top: 30vh;
+    margin-right: 40vw;
+}
+
+.arrow-container-right{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 7px;
+    color: #DDDDDD;
+    border: 1px solid #DDDDDD;
+    height: 40px;
+    width: 40px;
+    top: 30%;
+    left: 40%;
+    margin-top: 30vh;
+    margin-left: 40vw;
+}
+
+.arrow-container-left:hover{
+    background-color: #0085b2;
+    color: white;
+}
+
+.arrow-container-left:active{
+    background-color: #00698c;
+    transform: translateY(2px)
+}
+
+.arrow-container-right:hover{
+    background-color: #0085b2;
+    color: white;
+}
+
+.arrow-container-right:active{
+    background-color: #00698c;
+    transform: translateY(2px)
+}
+
+  
+.image-div{
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+
+.song-div{    
+    display: flex;
+    height: 20%;
+    flex-direction: row;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.295);
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.selected-song-div{
+    color: white;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.587);
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0085b2;
+}
+
+
+.left-song-itms{
+    display:flex;
+    flex-direction: row;
+    padding-left: 10px;
+    align-items: center;
+}
+
+.star-container{
+    padding:5px;
+    border: none;
+}
+
+.star-color{
+    color: #DDDDDD;
+}
+
+.selected-star-color{
+    color:#D9D900;
+    cursor: pointer;
+}
+
+.star-color:hover{
+    cursor: pointer;
+}
+
+.music-list-div{
+    background-color: rgb(243, 243, 243);
+    box-shadow: 2px 2px 5px #333;
+    width: 50vw;
+    height: 35vh;
+    margin: 0 auto;
+    margin-top:60px;
+    overflow: auto;
+}
+
+.song-duration-div{
+    color: "black";
+    padding-right: 20px;
+}
+
+.song-id{
+    padding: 3px 8px;
+    background-color: #90b9c9;
+    color: white;
+    margin-right:10px;
+}
+
+.song-name{
+    margin-left: 10px;
+    color: #0085b2;
+}
+
+.selected-song-name{
+    margin-left: 10px;
+    color:white;
+}  
+
+.label{
+    padding: 5px;
+    font-size: 12px;
+    background-color: #DDDDDD;
+    margin-left: 10px;
+    color: black;
+}
+
+.selected-label{
+    padding: 5px;
+    font-size: 12px;
+    background-color: #90b9c9;;
+    margin-left: 10px;
+    color: white;
+}
+
+.song-div:hover{
+    background-color: #0085b2;
+}
+
+.song-div:hover .star-color{
+    color:white;
+}
+
+.song-div:hover .star-container{
+    background-color: #0085b2;
+}
+
+.song-div:hover .star-container:hover .star-color{
+    color:#D9D900;
+
+}
+
+.song-div:hover .song-duration-div{
+    color:white;
+}
+
+.song-div:hover .song-name{
+    color:white;
+}
+
+.song-div:hover .label{
+    color:white;
+    background-color: #90b9c9;
+}
+
+.button-style{
+    padding:20px;
+}

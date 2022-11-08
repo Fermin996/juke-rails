@@ -1,0 +1,41 @@
+
+<div class="app-div">
+    <div  class="albums-div" >
+    <%= button_to styles_path, params: {direction:"left"}, class:"arrow-container-left", remote:true, method: :get do %>
+        <i class="fa-solid fa-arrow-left left-arrow-icon"></i>  
+    <%end%> 
+    <% @albms.each do |albm| %>
+        <% style= albm["style"] %>
+        <div id="<%= albm['id']%>" class="<%= style %>" >      
+            <%= image_tag "#{albm['cover_photo_url']}" %>
+            <p class="alb-name"><%= albm['name'].upcase %></p>
+            <p class="artist-name"><%= albm['artist_name'].upcase %></p>
+        </div>
+    <% end %>
+    <%= button_to styles_path, params: {direction:"right"}, class:"arrow-container-right", remote:true, method: :get do %>
+        <i class="fa-solid fa-arrow-right left-arrow-icon"></i>  
+    <%end%> 
+    </div>
+    <div id="song-list" class="music-list-div">
+    <% @album_songs.each do |song| %>
+        <%p song %>
+        <% favorite_style = "fa-solid fa-star " + song["style"] %>
+        <div class="song-div">
+            <div class="left-song-itms">
+                <div class='song-id' ><%= @album_songs.find_index(song)+1 %></div>
+                <%= button_to favorites_path, params: {song_name: song['song_name'], album_id: @album_id }, class:"star-container", remote:true, method: :get do %>
+                    <i id="<%= song['song_name']%>" class="<%=favorite_style %>"></i> 
+                <%end%> 
+                <div class= 'song-name'><%= song['song_name'].upcase %></div>
+                <% unless song['song_label'].nil? %>
+                <% song['song_label'].each do |label| %>
+                    <div class="label"><%= label.upcase %></div>
+                <%end%>     
+                <%end%>     
+            </div>
+            <div class="song-duration-div"><%= song['song_duration'] %></div>
+        </div>
+    <% end %>
+    </div>
+</div>
+
